@@ -13,6 +13,7 @@ require (
 	github.com/hashicorp/nomad v1.8.0
 	github.com/pkg/errors v0.9.1
 	github.com/second-state/WasmEdge-go v0.13.4
+	github.com/stretchr/testify v1.9.0
 )
 
 require (
@@ -126,6 +127,7 @@ require (
 	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.69 // indirect
 	oss.indeed.com/go/libtime v1.6.0 // indirect
 )
