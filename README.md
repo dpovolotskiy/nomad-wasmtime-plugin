@@ -64,7 +64,7 @@ make build
 
 * **engines** stanza is list of engine definitions:
   * **name** - Specifies the name of engine according to its extension
-    name (like [here](wasm/engines/wasmtime/wasmtime_engine.go#L18) for `wasmtime` engine).
+    name (like [here](wasm/engines/wasmtime/wasmtime_engine.go#L17) for `wasmtime` engine).
   * **enabled** - Defaults to `true`. Enables the defined wasm engine.
   * **cache** stanza:
 
