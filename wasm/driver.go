@@ -363,7 +363,7 @@ func (d *WasmTaskDriverPlugin) SetConfig(cfg *base.Config) error {
 	for _, engineConf := range d.config.Engines {
 		cacheConf := engineConf.Cache
 
-		if cacheConf.Size <= 0 {
+		if cacheConf.Enabled && cacheConf.Size <= 0 {
 			return fmt.Errorf("%s engine: cache size must be > 0, but specified %v", engineConf.Name, cacheConf.Size)
 		}
 
@@ -409,7 +409,7 @@ func initializeEngine(logger hclog.Logger, engineConf EngineConfig) error {
 			}
 
 			if preCachedModulesNum > engineConf.Cache.Size {
-				return fmt.Errorf("cache size (%v) must not be less then number of pre-cached modules (%v) for %s engine",
+				return fmt.Errorf("cache size (%v) must not be less than number of pre-cached modules (%v) for %s engine",
 					engineConf.Cache.Size, preCachedModulesNum, engineConf.Name)
 			}
 
