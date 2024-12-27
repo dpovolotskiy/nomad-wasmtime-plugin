@@ -68,7 +68,7 @@ func (h *taskHandle) run() {
 	if h.ioBufferConf.Enabled {
 		inputByte := []byte(h.ioBufferConf.InputValue)
 		if len(inputByte) > int(h.ioBufferConf.Size) {
-			h.reportError(fmt.Errorf("input must be less than %d bytes to fit IO buffer", h.ioBufferConf.Size))
+			h.reportError(fmt.Errorf("input must be less than or equal to %d bytes to fit IO buffer", h.ioBufferConf.Size))
 
 			return
 		}

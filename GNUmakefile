@@ -1,5 +1,5 @@
 PLUGIN_BINARY=build/wasm-task-driver
-export GO111MODULE=on
+PKGS = $(shell go list ./... | grep -v vendor)
 
 default: build
 
@@ -15,3 +15,7 @@ lint:
 
 go-mod-tidy:
 	@report=`go mod tidy -v 2>&1` ; if [ -n "$$report" ]; then echo "$$report"; exit 1; fi
+
+test:
+	@go test -race -coverprofile=coverage.txt -covermode=atomic $(PKGS)
+	@go tool cover -html=coverage.txt -o coverage.html
